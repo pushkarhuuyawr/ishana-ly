@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ishanaverse Ultimate 🌌</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#0d1117,#1a2332,#2d3b13);
+color:white;
+overflow-x:hidden;
+}
+
+#stars{
+position:fixed;
+inset:0;
+pointer-events:none;
+}
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:.2}
+to{opacity:1}
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.glass{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.15);
+border-radius:25px;
+padding:30px;
+max-width:900px;
+}
+
+h1{
+font-size:4rem;
+}
+
+.subtitle{
+margin-top:15px;
+opacity:.85;
+}
+
+.btn{
+padding:12px 20px;
+border:none;
+border-radius:999px;
+cursor:pointer;
+margin:8px;
+font-size:1rem;
+}
+
+.primary{
+background:#6b8e23;
+color:white;
+}
+
+.section{
+padding:80px 20px;
+}
+
+.card{
+background:rgba(255,255,255,.08);
+border-radius:20px;
+padding:25px;
+max-width:900px;
+margin:auto;
+}
+
+.planet{
+width:220px;
+height:220px;
+margin:30px auto;
+border-radius:50%;
+background:
+radial-gradient(circle at 30% 30%,
+#ffffff,
+#b8d48a 35%,
+#6b8e23 70%,
+#2d3b13);
+box-shadow:
+0 0 40px rgba(141,178,85,.5),
+0 0 80px rgba(141,178,85,.2);
+animation:
+spin 18s linear infinite,
+floaty 5s ease-in-out infinite;
+}
+
+@keyframes spin{
+from{transform:rotate(0deg)}
+to{transform:rotate(360deg)}
+}
+
+@keyframes floaty{
+0%,100%{translate:0 0}
+50%{translate:0 -15px}
+}
+
+.output{
+margin-top:15px;
+font-size:1.1rem;
+}
+
+#garden{
+font-size:2rem;
+word-wrap:break-word;
+margin-top:15px;
+}
+
+footer{
+padding:50px;
+text-align:center;
+opacity:.8;
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<section class="hero">
+<div class="glass">
+
+<h1>🌌 Ishanaverse Ultimate</h1>
+
+<p class="subtitle">
+A tiny universe dedicated to Ishana 🌿🤍
+</p>
+
+<a href="#planet">
+<button class="btn primary">
+Enter Universe 🚀
+</button>
+</a>
+
+</div>
+</section>
+
+<section id="planet" class="section">
+
+<div class="card">
+
+<h2>🌍 Planet Ishana</h2>
+
+<div class="planet"></div>
+
+<p>
+Planet Ishana is a rare world known for kindness,
+comfort, laughter, and positive energy.
+Scientists are still studying why everyone leaves
+this planet smiling.
+</p>
+
+<br>
+
+<button class="btn primary" onclick="artifact()">
+Discover Artifact ✨
+</button>
+
+<div id="artifactOut" class="output"></div>
+
+<br>
+
+<button class="btn primary" onclick="fact()">
+Reveal Planet Fact 🌍
+</button>
+
+<div id="factOut" class="output"></div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="card">
+
+<h2>🌙 Memory Jar</h2>
+
+<button class="btn primary" onclick="memory()">
+Open Memory
+</button>
+
+<div id="memoryOut" class="output"></div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="card">
+
+<h2>🌿 Compliment Generator</h2>
+
+<button class="btn primary" onclick="compliment()">
+Generate
+</button>
+
+<div id="complimentOut" class="output"></div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="card">
+
+<h2>🌼 Friendship Garden</h2>
+
+<button class="btn primary" onclick="grow()">
+Grow Flower
+</button>
+
+<div id="garden">🌱</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="card">
+
+<h2>💌 Secret Letter</h2>
+
+<p style="line-height:1.8">
+
+Dear Ishana,
+
+<br><br>
+
+This website isn't really about stars,
+planets or games.
+
+It's simply a small universe built with
+appreciation.
+
+Thank you for the conversations,
+the laughs, and the memories.
+
+I hope life gives you many reasons
+to smile.
+Lots of luv forever🐱
+
+<br><br>
+
+🌿🤍
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="card">
+
+<h2>🔐 Secret Portal</h2>
+
+<input
+id="pass"
+placeholder="Password"
+style="padding:10px;border-radius:10px;border:none;margin:10px"
+>
+
+<br>
+
+<button class="btn primary" onclick="unlock()">
+Unlock
+</button>
+
+<div id="portalOut" class="output"></div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="card">
+
+<h2>🎮 Boss Battle</h2>
+
+<p>
+Who is the cutest person here?
+</p>
+
+<br>
+
+<button class="btn" onclick="boss(false)">
+🐧 Penguin
+</button>
+
+<button class="btn" onclick="boss(false)">
+🥔 Potato
+</button>
+
+<button class="btn primary" onclick="boss(true)">
+✨ Ishana
+</button>
+
+<div id="bossOut" class="output"></div>
+
+</div>
+
+</section>
+
+<footer>
+🌌 End of Transmission 🌌
+</footer>
+
+<script>
+
+for(let i=0;i<220;i++){
+
+let s=document.createElement("div");
+
+s.className="star";
+
+let size=Math.random()*3+1;
+
+s.style.width=size+"px";
+s.style.height=size+"px";
+
+s.style.left=Math.random()*100+"%";
+s.style.top=Math.random()*100+"%";
+
+document.getElementById("stars").appendChild(s);
+
+}
+
+const artifacts=[
+
+"🏆 Infinite Good Vibes",
+
+"🌿 Comfort Aura +100",
+
+"✨ Happiness Crystal",
+
+"🤍 Friendship Energy",
+
+"🌍 +999 Awesome Points"
+
+];
+
+function artifact(){
+
+artifactOut.innerHTML=
+artifacts[
+Math.floor(Math.random()*artifacts.length)
+];
+
+}
+
+const facts=[
+
+"🌿 Planet Ishana never runs out of good vibes.",
+
+"🤍 Visitors leave happier than before.",
+
+"✨ The atmosphere contains laughter.",
+
+"🌍 Positive energy powers the planet."
+
+];
+
+function fact(){
+
+factOut.innerHTML=
+facts[
+Math.floor(Math.random()*facts.length)
+];
+
+}
+
+const memories=[
+
+"✨ Some conversations stay with you for days.",
+
+"✨ Random moments become favorite memories.",
+
+"✨ Good company makes ordinary days better."
+
+];
+
+function memory(){
+
+memoryOut.innerHTML=
+memories[
+Math.floor(Math.random()*memories.length)
+];
+
+}
+
+const compliments=[
+
+"🌿 You make people feel comfortable.",
+
+"🤍 You are appreciated more than you know.",
+
+"✨ Your existence improves the vibe."
+
+];
+
+function compliment(){
+
+complimentOut.innerHTML=
+compliments[
+Math.floor(Math.random()*compliments.length)
+];
+
+}
+
+let flowers=0;
+
+function grow(){
+
+flowers++;
+
+garden.innerHTML+=" 🌼";
+
+}
+
+function unlock(){
+
+let p=document
+.getElementById("pass")
+.value
+.toLowerCase();
+
+if(p==="ishana"){
+
+portalOut.innerHTML=
+"🏆 Access Granted! Welcome to the secret area.";
+
+}else{
+
+portalOut.innerHTML=
+"❌ Wrong Password";
+
+}
+
+}
+
+function boss(correct){
+
+if(correct){
+
+bossOut.innerHTML=
+"🎉 Achievement Unlocked: Certified Awesome Human ✨";
+
+}else{
+
+bossOut.innerHTML=
+"❌ Try again 😭";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
