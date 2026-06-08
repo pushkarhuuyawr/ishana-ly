@@ -1,0 +1,222 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        #fff7f8,
+        #fffdf7,
+        #fff0f5
+    );
+
+}
+
+#loadingScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:1000;
+
+    background:white;
+}
+
+.progress{
+
+    width:320px;
+
+    height:14px;
+
+    background:#eee;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    margin-top:20px;
+}
+
+#bar{
+
+    height:100%;
+
+    width:0;
+
+    background:#ff7ba4;
+}
+
+#percent{
+
+    margin-top:15px;
+
+    font-size:20px;
+}
+
+#musicBtn{
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    z-index:999;
+
+    border:none;
+
+    padding:12px 18px;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    background:#ff7ba4;
+
+    color:white;
+}
+
+#mainContent{
+
+    display:none;
+}
+
+.scene{
+
+    position:absolute;
+
+    width:100%;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    text-align:center;
+
+    opacity:0;
+
+    transition:1.5s;
+}
+
+.scene.active{
+
+    opacity:1;
+}
+
+.scene img{
+
+    width:90%;
+
+    max-width:450px;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 15px 40px
+    rgba(0,0,0,.15);
+}
+
+.scene h2{
+
+    margin-top:20px;
+
+    color:#ff6f91;
+}
+
+#hugImage{
+
+    animation:heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+#messageBox{
+
+    position:absolute;
+
+    width:100%;
+
+    bottom:40px;
+
+    display:flex;
+
+    justify-content:center;
+}
+
+#typedText{
+
+    max-width:700px;
+
+    background:
+    rgba(255,255,255,.85);
+
+    backdrop-filter:blur(10px);
+
+    padding:25px;
+
+    border-radius:20px;
+
+    line-height:1.8;
+
+    color:#555;
+
+    font-size:18px;
+}
+
+.heart,
+.petal{
+
+    position:absolute;
+
+    pointer-events:none;
+
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+
+    from{
+
+        transform:
+        translateY(-100px)
+        rotate(0deg);
+
+        opacity:1;
+    }
+
+    to{
+
+        transform:
+        translateY(120vh)
+        rotate(360deg);
+
+        opacity:0;
+    }
+}

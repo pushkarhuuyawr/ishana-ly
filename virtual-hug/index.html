@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Hug For Ishana 🤍</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="loadingScreen">
+
+        <h1>🤍 Preparing a Hug for Ishana...</h1>
+
+        <div class="progress">
+            <div id="bar"></div>
+        </div>
+
+        <p id="percent">0%</p>
+
+    </div>
+
+    <button id="musicBtn">
+        🎵 Music
+    </button>
+
+    <audio id="music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="mainContent">
+
+        <div class="scene active" id="scene1">
+
+            <img src="images/girl.png.jpg" alt="Ishana">
+
+            <h2>Ishana 🌸</h2>
+
+        </div>
+
+        <div class="scene" id="scene2">
+
+            <img src="images/walking.png.jpg" alt="Walking">
+
+            <h2>A Hug Is Approaching...</h2>
+
+        </div>
+
+        <div class="scene" id="scene3">
+
+            <img id="hugImage" src="images/hug.png.jpg" alt="Hug">
+
+        </div>
+
+        <div id="messageBox">
+
+            <div id="typedText"></div>
+
+        </div>
+
+    </div>
+
+    <div id="petals"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
